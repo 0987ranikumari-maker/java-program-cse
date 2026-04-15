@@ -1,6 +1,6 @@
 # 💻 Java & C Programming Assignment
 
-## 👩‍💻 Name: Rani Kumari  
+## 👩‍💻 Name: Rani Kumari (240084) 
 ## 🎓 Course: B.Tech CSE  
 
 ---
