@@ -1,0 +1,28 @@
+class Time {
+    int h, m, s;
+
+    Time(int h, int m, int s) {
+        this.h = h;
+        this.m = m;
+        this.s = s;
+    }
+
+    void add(Time t) {
+        int s = this.s + t.s;
+        int m = this.m + t.m + s / 60;
+        int h = this.h + t.h + m / 60;
+
+        s = s % 60;
+        m = m % 60;
+
+        System.out.println("Time = " + h + ":" + m + ":" + s);
+    }
+}
+
+public class TimeMain {
+    public static void main(String[] args) {
+        Time t1 = new Time(2, 45, 50);
+        Time t2 = new Time(3, 30, 20);
+        t1.add(t2);
+    }
+}
