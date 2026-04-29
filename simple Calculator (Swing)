@@ -1,0 +1,29 @@
+import javax.swing.*;
+
+public class Q13_Calculator {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Calculator");
+
+        JTextField t1 = new JTextField();
+        JTextField t2 = new JTextField();
+        JButton add = new JButton("+");
+        JLabel res = new JLabel();
+
+        t1.setBounds(50,50,100,30);
+        t2.setBounds(50,100,100,30);
+        add.setBounds(50,150,50,30);
+        res.setBounds(50,200,150,30);
+
+        f.add(t1); f.add(t2); f.add(add); f.add(res);
+
+        add.addActionListener(e -> {
+            int a = Integer.parseInt(t1.getText());
+            int b = Integer.parseInt(t2.getText());
+            res.setText("Result: " + (a+b));
+        });
+
+        f.setSize(300,300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
