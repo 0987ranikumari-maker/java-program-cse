@@ -1,0 +1,28 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Q16_PaintBrush extends JPanel {
+    int x,y;
+
+    Q16_PaintBrush(){
+        addMouseMotionListener(new MouseMotionAdapter(){
+            public void mouseDragged(MouseEvent e){
+                x=e.getX();
+                y=e.getY();
+                repaint();
+            }
+        });
+    }
+
+    public void paint(Graphics g){
+        g.fillOval(x,y,5,5);
+    }
+
+    public static void main(String[] args){
+        JFrame f=new JFrame();
+        f.add(new Q16_PaintBrush());
+        f.setSize(400,400);
+        f.setVisible(true);
+    }
+}
