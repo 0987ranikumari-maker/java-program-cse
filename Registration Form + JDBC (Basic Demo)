@@ -1,0 +1,38 @@
+import javax.swing.*;
+import java.sql.*;
+import java.awt.event.*;
+
+public class Q12_RegistrationJDBC {
+    public static void main(String[] args) {
+        JFrame f = new JFrame("Register");
+
+        JTextField name = new JTextField();
+        JButton submit = new JButton("Submit");
+
+        name.setBounds(50,50,150,30);
+        submit.setBounds(50,100,100,30);
+
+        f.add(name); f.add(submit);
+
+        submit.addActionListener(e -> {
+            try {
+                Connection con = DriverManager.getConnection(
+                    "jdbc:mysql://localhost:3306/test","root","");
+
+                PreparedStatement ps = con.prepareStatement(
+                    "insert into student(name) values(?)");
+
+                ps.setString(1, name.getText());
+                ps.executeUpdate();
+
+                JOptionPane.showMessageDialog(f,"Inserted!");
+            } catch(Exception ex) {
+                System.out.println(ex);
+            }
+        });
+
+        f.setSize(300,300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
