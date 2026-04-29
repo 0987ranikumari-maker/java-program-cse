@@ -1,0 +1,32 @@
+import java.util.*;
+
+class ArrayMethods {
+    int arr[] = new int[5];
+
+    void input() {
+        Scanner sc = new Scanner(System.in);
+        for(int i=0;i<5;i++) arr[i] = sc.nextInt();
+    }
+
+    void output1() {
+        for(int i=0;i<5;i++) System.out.print(arr[i]+" ");
+    }
+
+    void output2() {
+        for(int x: arr) System.out.print(x+" ");
+    }
+
+    void reverse() {
+        for(int i=4;i>=0;i--) System.out.print(arr[i]+" ");
+    }
+}
+
+public class Q7_ArrayMethods {
+    public static void main(String[] args) {
+        ArrayMethods obj = new ArrayMethods();
+        obj.input();
+        obj.output1();
+        obj.output2();
+        obj.reverse();
+    }
+}
