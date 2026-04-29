@@ -1,0 +1,17 @@
+class T1 extends Thread {
+    public void run() {
+        for(int i=1;i<=5;i++)
+            System.out.println("T1: "+i);
+    }
+}
+
+public class Q10_ThreadJoin {
+    public static void main(String[] args) throws Exception {
+        T1 t1 = new T1();
+        t1.start();
+        t1.join();
+
+        for(int i=1;i<=5;i++)
+            System.out.println("Main: "+i);
+    }
+}
