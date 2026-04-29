@@ -1,0 +1,29 @@
+import javax.swing.*;
+
+public class Q14_MatrixSwing {
+    public static void main(String[] args) {
+        int a[][]={{1,2},{3,4}};
+        int b[][]={{5,6},{7,8}};
+
+        JFrame f = new JFrame();
+
+        JTextArea area = new JTextArea();
+        area.setBounds(50,50,200,200);
+
+        String result="";
+
+        for(int i=0;i<2;i++){
+            for(int j=0;j<2;j++){
+                result += (a[i][j]+b[i][j])+" ";
+            }
+            result += "\n";
+        }
+
+        area.setText(result);
+        f.add(area);
+
+        f.setSize(300,300);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
