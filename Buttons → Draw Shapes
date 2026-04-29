@@ -1,0 +1,32 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class Q15_ButtonsShapes extends JPanel {
+    String shape="";
+
+    public void paint(Graphics g) {
+        if(shape.equals("circle")) g.drawOval(100,100,100,100);
+        if(shape.equals("rect")) g.drawRect(100,100,150,100);
+    }
+
+    public static void main(String[] args) {
+        JFrame f = new JFrame();
+        Q15_ButtonsShapes p = new Q15_ButtonsShapes();
+
+        JButton b1 = new JButton("Circle");
+        JButton b2 = new JButton("Rectangle");
+
+        b1.setBounds(50,20,100,30);
+        b2.setBounds(200,20,100,30);
+
+        b1.addActionListener(e->{ p.shape="circle"; p.repaint();});
+        b2.addActionListener(e->{ p.shape="rect"; p.repaint();});
+
+        f.add(b1); f.add(b2); f.add(p);
+
+        f.setSize(400,400);
+        f.setLayout(null);
+        f.setVisible(true);
+    }
+}
